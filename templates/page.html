@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Felipe</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-timeline.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <h1>Dev <span>Felipe</span></h1>
+        <nav>
+            <ul aria-label="Navegação primária" class="navegacao-primaria">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#portfolio">Porfolio</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <i class="fa-solid fa-bars"></i>
+        </nav>
+
+    </header>
+    <section aria-label="seção curriculo dowload Leonardo" class="section-div">
+        <div>
+            <h2>Olá! Eu sou José Felipe</h2>
+            <h2 class="digitando">Back-end Developer</h2>
+            <p>Sou um desenvolvedor backe-end, que trabalha com linguagem python...</p>
+            <a href="#">Dowload CV</a>
+        </div>
+        <img src="https://www.pngwing.com/en/free-png-bbned" alt="ilustrativa imagem de uma pessoa">
+    </section>
+    <main class="set_main">
+        <article aria-label="seção sobre mim" class="sobre">
+            <div class="sobre_titulo">
+                <h1>Sobre mim</h1>
+                <p>Saiba um pouco sobre mim</p>
+                <div aria-label="Seção apenas de ilustrações de botões">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <img src="imgs/foto_portifolio_about.png" alt="imagem de uma pessoa ilustrativa">
+            <div class="sobre_conteudo">
+                <div class="sobre_texto">
+                    <h1>Eu sou José Felipe</h1>
+                    <p>Meu primeiro contato com programação foi ao utilizar uma placa Arduino em 2014. Em 2015 eu comecei cursar o curso técnico em informática integrado ao ensino médio, esse curso teve duração de 3 anos. Durante esse período eu gostei muito de aprender a lógica de programação. Ao longo desse tempo aprendi o básico em linguagens como python, pascal, c e java. Após a conclusão em janeiro de 2019, eu comecei a trabalhar como autônomo no suporte em informática por 3 anos, e ainda fiquei vendendo salgados por uns 8 meses. Ao mesmo tempo que trabalhava eu estava estudando Delphi-lazarus e python para desenvolver um sistema de vendas.
+                        <br>
+                        <br>
+                        Atualmente trabalho na empresa blitzpay como desenvolvedor backend.
+                    </p>
+                </div>
+                <div class="sobre_info">
+                    <p><i class="fa-solid fa-calendar-days"></i>Data de nascimento: 08 fev 2000</p>
+                    <p><i class="fa-sharp fa-solid fa-laptop-code"></i>Freelance: Available</p>
+                    <p><i class="fa-solid fa-location-dot"></i>Endereço: Teresina, Brasil</p>
+                    <p><i class="fa-sharp fa-solid fa-globe"></i>Idiomas faladas: Português</p>
+                    <p><i class="fa-solid fa-flag"></i>Nacionalidade: Brasileira</p>
+                    <p><i class="fa-solid fa-phone-volume"></i>Phone: +55 (86) 99930-6867</p>
+                    <p><i class="fa-solid fa-envelope"></i>Email: felipe.brx.dev@gmail.com</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <section class="services">
+        <div class="sobre_titulo">
+            <h1>About Me</h1>
+            <p>Professional Profile - There is All About me</p>
+            <div aria-label="Seção apenas de ilustrações de botões">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="my_services">
+            <ul aria-label="Navegação secundaria">
+                <li>
+                    <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+                    <h3>Web Design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, earum.</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Web Developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, earum.</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-camera"></i>
+                    <h3>Photography</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, earum.</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>SEO Analyst</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, earum.</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-medal"></i>
+                    <h3>Creative Design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, earum.</p>
+                </li>
+                <li>
+                    <i class="fa-sharp fa-solid fa-palette"></i>
+                    <h3>UX/UI</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, earum.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="my_resume">
+        <div class="sobre_titulo">
+            <h1>Resumo</h1>
+            <p>Minha trajétorio no mercado e formação academica.</p>
+            <div aria-label="Seção apenas de ilustrações de botões">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <section>
+           <div class="container_timeline">
+            <main class="row_timeline" id="main_timeline">
+
+                <section class="col_timeline">
+
+                    <header class="title_timeline">
+                        <h2>ACADÊMICO</h2>
+                    </header>
+
+                    <div class="contents">
+                        <div class="box_timeline">
+                            <h4>2018 - 2022</h4>
+                            <h3>Segundo grau - asss</h3>
+                            <p>Welcome to the Project-Based Django Web Development Course where you will learn to develop a fully-featured Multi-vendor Restaurant Marketplace website with location-based search, nearby restaurants, and many more complex functionalities.I designed this course, for anyone seeking to learn and build a Django-based custom web application. By the end of this course, you will be able to analyze, design, and develop your own Multi-vendor Restaurant Marketplace website and deploy it on the live server with the custom domain name.</p>
+                        </div>
+
+                        <div class="box_timeline">
+                            <h4>2019 - 2023</h4>
+                            <h3>CRUZEIRO DO SUL - SISTEMAS TI</h3>
+                            <p>Welcome to the Project-Based Django Web Development Course where you will learn to develop a fully-featured Multi-vendor Restaurant Marketplace website with location-based search, nearby restaurants, and many more complex functionalities.I designed this course, for anyone seeking to learn and build a Django-based custom web application. By the end of this course, you will be able to analyze, design, and develop your own Multi-vendor Restaurant Marketplace website and deploy it on the live server with the custom domain name.</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="col_timeline">
+
+                    <header class="title_timeline">
+                        <h2>EXPERIÊNCIAS PROFISSIONAIS</h2>
+                    </header>
+
+                    <div class="contents">
+                        <div class="box_timeline">
+                            <h4>2018 - 2022</h4>
+                            <h3>Segundo grau - asss</h3>
+                            <p>Welcome to the Project-Based Django Web Development Course where you will learn to develop a fully-featured Multi-vendor Restaurant Marketplace website with location-based search, nearby restaurants, and many more complex functionalities.I designed this course, for anyone seeking to learn and build a Django-based custom web application. By the end of this course, you will be able to analyze, design, and develop your own Multi-vendor Restaurant Marketplace website and deploy it on the live server with the custom domain name.</p>
+                        </div>
+
+                        <div class="box_timeline">
+                            <h4>2019 - 2023</h4>
+                            <h3>AMAZON - BACKEND DEV</h3>
+                            <p>Welcome to the Project-Based Django Web Development Course where you will learn to develop a fully-featured Multi-vendor Restaurant Marketplace website with location-based search, nearby restaurants, and many more complex functionalities.I designed this course, for anyone seeking to learn and build a Django-based custom web application. By the end of this course, you will be able to analyze, design, and develop your own Multi-vendor Restaurant Marketplace website and deploy it on the live server with the custom domain name.</p>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </section>
+
+        <div class="cursos">
+            <div class="my_skill">
+                <h2><i class="fa-sharp fa-regular fa-star"></i>SKILLS FRONT-END</h2>
+                <div class="skill_content">
+                    <h3>HTML 5</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>CSS 3</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>REACT JS</h3>
+                    <ul>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>JAVASCRIPT</h3>
+                    <ul>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </ul>
+                </div>
+            </div>
+             <div class="my_skill">
+                <h2><i class="fa-sharp fa-regular fa-star"></i>SKILLS BACK-END</h2>
+                <div class="skill_content">
+                    <h3>PYTHON</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i class="fa-light fa-star-sharp-half-stroke"></i></i></li>
+
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>DJANGO</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>CELERY</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>DJANGO REST FRAMEWORK</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+                  <div class="skill_content">
+                    <h3>Pipelines CI/CD</h3>
+                    <ul>
+                         <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>GIT</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+            </div>
+             <div class="my_skill">
+                <h2><i class="fa-sharp fa-regular fa-star"></i>OUTRAS SKILLS</h2>
+                <div class="skill_content">
+                    <h3>Linux</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>AMAZON AWS EC2</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-star-half-stroke"></i></li>
+
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>AMAZON AWS S3</h3>
+                    <ul>
+                         <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>SSH</h3>
+                    <ul>
+                         <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>SHELL SCRIPT</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                    </ul>
+                </div>
+                <div class="skill_content">
+                    <h3>GIT</h3>
+                    <ul>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="projects">
+        <div class="sobre_titulo">
+            <h1>Meus Projetos</h1>
+            <p>Veja o que já fiz.</p>
+            <div aria-label="Seção apenas de ilustrações de botões">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="project_models">
+            <ul class="project_navegacao" aria-label="Navegação entre modelos expecificos de projetos">
+                <li class="all">Todos</li>
+                <li class="design">Backend</li>
+                <li class="graphic">Front-end</li>
+                <li class="website">Fullstack</li>
+            </ul>
+        </div>
+        <div class="projects_armazenamento">
+            <ul aria-label="Navegação de projetos e websites">
+                <li id="design"><img src="imgs/ecommerce.jpeg" alt="Site criado para ser um ecommerce geral"></li>
+                <li id="design"><img src="imgs/facebook.jpeg" alt="Clone da tela de login do facebook"></li>
+                <li id="graphic"><img src="imgs/instagram.jpeg" alt="Clone da tela de login do instagram"></li>
+                <li id="graphic"><img src="imgs/iphone.jpeg" alt="Landing page da Apple"></li>
+                <li id="website"><img src="imgs/leagueoflegends.jpeg" alt="Tela de cadastro de League of legends">
+                </li>
+                <li id="website"><img src="imgs/marioword.jpeg" alt="Landing Page do filme Mario Word"></li>
+                <li id="website"><img src="imgs/netflix.jpeg" alt="Clone da Netflix"></li>
+                <li id="website"><img src="imgs/sonic.jpeg" alt="Landing Page do filme Sonic"></li>
+            </ul>
+        </div>
+        <a href="#">Load More Portfólio</a>
+    </section>
+
+    <footer>
+        <div class="sobre_titulo">
+            <h1>Dev José Felipe</h1>
+            <p>Minhas redes sociais</p>
+        </div>
+        <nav aria-label="navegação de links sociais">
+            <ul class="footer_sociais">
+                <li><i class="fa-brands fa-facebook-f"><a href="#"></a></i></li>
+                <li><i class="fa-brands fa-twitter"><a href="#"></a></i><a href="#"></a></li>
+                <li><i class="fa-brands fa-linkedin-in"></i></li>
+                <li><i class="fa-brands fa-instagram"><a href="#"></a></i></li>
+                <li><i class="fa-brands fa-github-alt"><a href="#"></a></i></li>
+            </ul>
+        </nav>
+        <p class="footer_comercial">Todos os direitos reservados DEV SABER &copy; - 2023</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

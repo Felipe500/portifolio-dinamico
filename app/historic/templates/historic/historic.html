@@ -1,0 +1,50 @@
+ <section>
+           <div class="container_timeline">
+            <main class="row_timeline" id="main_timeline">
+
+                <section class="col_timeline">
+
+                    <header class="title_timeline">
+                        <h2>ACADÊMICO</h2>
+                    </header>
+
+                    <div class="contents">
+                        {% for historic in  historics %}
+
+                            {% if historic.type == 'academic' %}
+                                <div class="box_timeline">
+                                    <h4>2018 - 2022</h4>
+                                    <h3>Segundo grau - asss</h3>
+                                    <p>Welcome to the Project-Based Django Web Development Course where you will learn to develop a fully-featured Multi-vendor Restaurant Marketplace website with location-based search, nearby restaurants, and many more complex functionalities.I designed this course, for anyone seeking to learn and build a Django-based custom web application. By the end of this course, you will be able to analyze, design, and develop your own Multi-vendor Restaurant Marketplace website and deploy it on the live server with the custom domain name.</p>
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+                </section>
+
+                <section class="col_timeline">
+
+                    <header class="title_timeline">
+                        <h2>EXPERIÊNCIAS PROFISSIONAIS</h2>
+                    </header>
+
+                    <div class="contents">
+                        {% for historic in  historics %}ss
+
+                            {% if historic.type == 'professional' %}
+                                <div class="box_timeline">
+                                    <h4>2018 - 2022</h4>
+                                    <h3>AMAZON - BACKEND DEV</h3>
+                                    <p>Welcome to the Project-Based Django Web Development Course where you will learn to develop a fully-featured Multi-vendor Restaurant Marketplace website with location-based search, nearby restaurants, and many more complex functionalities.I designed this course, for anyone seeking to learn and build a Django-based custom web application. By the end of this course, you will be able to analyze, design, and develop your own Multi-vendor Restaurant Marketplace website and deploy it on the live server with the custom domain name.</p>
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </section>
