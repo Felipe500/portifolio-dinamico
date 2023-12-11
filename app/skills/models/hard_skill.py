@@ -59,12 +59,10 @@ class HardSkill(BaseModel):
             })
 
         card_ids = CardSkill.objects.get_queryset().values_list('id', flat=True)
-        print(card_ids)
 
         card_skill_ = {key: None for key in card_ids}
 
         for card_skill in card_ids:
-            print('card  ', card_skill)
             card_skill_[int(card_skill)] = [d for d in list_skill if d["card_id"] in [card_skill]]
 
         Website.objects.filter(id=self.website.id).update(skills=card_skill_)
