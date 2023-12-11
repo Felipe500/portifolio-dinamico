@@ -18,7 +18,7 @@ class Historic(BaseModel):
     institution_company = models.CharField(
         max_length=255, verbose_name="Instituição ou Empresa", null=True, blank=True
     )
-    description = models.CharField(
+    description = models.TextField(
         max_length=255, verbose_name="Descrição", null=True, blank=True
     )
     type = models.CharField(
