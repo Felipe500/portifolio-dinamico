@@ -63,6 +63,8 @@ header .navegacao-primaria li a::after {
     transition: .3s;
 }
 
+
+
 header .navegacao-primaria li a:hover::after {
     width: 100%;
     height: 0px;
@@ -72,11 +74,6 @@ header .navegacao-primaria li a:hover::after {
 
 #nav_bar i{
     display: None;
-}
-
-/* DOWLOAD CV SECAO */
-#page_content{
-    max-width: 1120px;
 }
 
 .section-div {
@@ -167,31 +164,6 @@ header .navegacao-primaria li a:hover::after {
     animation: pisca .5s infinite;
 }
 
-
-@keyframes pisca {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-
-@keyframes inicializar {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -60px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-
 /* SEÇÃO PRINCIPAL SOBRE MIM */
 
 
@@ -209,14 +181,14 @@ main .sobre {
     padding: 40px;
 }
 
-.sobre_titulo {
+.titulo_padrao {
     margin: 30px 0;
     grid-column: 1/-1;
     text-align: center;
     color: #fff;
 }
 
-.sobre_titulo h1 {
+.titulo_padrao h1 {
     font-size: 2.5rem;
     color: #dc3545;
     margin-bottom: 15px;
@@ -225,26 +197,27 @@ main .sobre {
 
 }
 
-.sobre_titulo p {
+.titulo_padrao p {
     color: #707070;
     font-size: 1.4rem;
     margin-bottom: 1rem;
     position: relative;
 }
 
-.sobre_titulo div {
+.titulo_padrao div {
     display: flex;
     gap: 10px;
     justify-content: center;
 }
 
-.sobre_titulo span {
+.titulo_padrao span {
     display: block;
     height: 20px;
     width: 20px;
     border-radius: 50%;
     background-color: #dc3545;
 }
+
 
 .sobre img {
     animation: ladoSecao .5s ease-in-out forwards;
@@ -318,119 +291,11 @@ main .sobre {
     font-size: .9rem;
 }
 
-@keyframes sobeSecao {
-    from {
-        transition: .5s;
-        transform: translate3d(60px, 0, 0);
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-/* RESPONSIVO */
-
-@media(min-width: 800px) {
-    .section-div {
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 14px;
-        background-image: None;
-        background-position-x: 4rem;
-        background-size: 1px;
-
-    }
-}
-
-@media(max-width: 992px) {
-
-
-    .section-div img {
-        display: none;
-    }
-
-    .section-div {
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 14px;
-        background-image: None;
-        background-position-x: 4rem;
-    }
-
-
-    header {
-        justify-content: space-between;
-        padding: 10px 10px;
-    }
-
-    header .navegacao-primaria {
-        display: none;
-    }
-
-    #nav_bar i{
-        display: block;
-    }
-
-    header i {
-        color: #f7f7f7;
-        font-size: 3rem;
-    }
-
-    header .navegacao-primaria.ativado {
-        background: #202539;
-        position: absolute;
-        display: grid;
-        top: 62px;
-        color: #fff;
-        z-index: 1;
-        padding: 52px;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 0 0 4px 4px;
-        right: 1px;
-        animation: sobeSecao .8s ease-in-out forwards;
-        border-radius: 50%;
-    }
-
-    .sobre img {
-        grid-column: 1/-1;
-        justify-self: center;
-        display: block;
-    }
-
-    .sobre_conteudo {
-        grid-column: 1/-1;
-    }
-}
-
 
 /* SOBRE MINHAS EXPERIÊNCIAS */
 
 .my_resume {
     color: #f7f7f7;
-}
-
-.resume_gerenico {
-    padding: 30px;
-    display: grid;
-    justify-content: center;
-    align-items: start;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr;
-}
-
-.resume_gerenico h2 {
-    font-family: 'Poppins';
-    font-size: 1.5rem;
-    background-color: #5b56ffe0;
-    justify-self: start;
-    padding: 10px;
-    border-radius: 1px;
-}
-
-.resume_gerenico h2 i {
-    margin-right: 10px;
 }
 
 .experience {
@@ -455,104 +320,9 @@ main .sobre {
 }
 
 
-.resume_gerenico .experience_content div {
-    animation: ladoSecao .5s ease-in-out forwards;
-    display: none;
-    background-color: #222;
-    padding: 40px;
-}
-
-
-.resume_gerenico .experience_content div::before {
-    content: '';
-    display: inline-block;
-    border-right: 30px solid transparent;
-    border-bottom: 30px solid #222;
-    top: -20px;
-    left: 30px;
-    position: absolute;
-}
-
-.resume_gerenico .experience_content div span {
-    color: #dc3545;
-    font-family: 'Poppins';
-    font-weight: bold;
-}
-
-.resume_gerenico .experience_content div h3 {
-    font-family: 'Poppins';
-    margin: 10px 0;
-}
-
-.resume_gerenico .experience_content div p {
-    color: #707070;
-    font-size: 1.1rem;
-}
-
-
-.resume_gerenico .experience_content div.ativo {
-    display: block;
-    padding: 40px;
-}
-
 .experience_content ul li.ativo {
     color: #3e3d3d;
 }
-
-/* MEUS DIPROMAS E CURSOS */
-
-.resume_gerenico .education_content div {
-    animation: sobeSecao .5s ease-in-out forwards;
-    display: none;
-    background-color: #222;
-    padding: 20px;
-}
-
-.resume_gerenico .education_content ul {
-    color: #ff5d56;
-    gap: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.resume_gerenico .education_content div::before {
-    content: '';
-    display: inline-block;
-    border-right: 30px solid transparent;
-    border-bottom: 30px solid #222;
-    top: -20px;
-    left: 30px;
-    position: absolute;
-}
-
-.resume_gerenico .education_content div span {
-    color: #dc3545;
-    font-family: 'Poppins';
-    font-weight: bold;
-}
-
-.resume_gerenico .education_content div h3 {
-    font-family: 'Poppins';
-    margin: 10px 0;
-}
-
-.resume_gerenico .education_content div p {
-    color: #707070;
-    font-size: 1.1rem;
-}
-
-.resume_gerenico .education_content ul li.ativo {
-    color: #2f2b2b;
-}
-
-.resume_gerenico .education_content div.ativo {
-    display: block;
-    padding: 40px;
-    animation: sobeSecao .5s ease-in-out forwards;
-}
-
 
 /* SOBRE CURSOS E SKILLS */
 
@@ -566,10 +336,16 @@ main .sobre {
     padding: 30px;
 }
 
+.my_skill {
+    margin-bottom: 45px;
+}
 
+.skill_icons img{
+    width: 2rem;
+}
 
 .my_skill h2 {
-    padding: 10px 30px;
+    padding: 10px 10px;
     border-radius: 3px;
     font-size: 1.5rem;
     font-family: 'Poppins';
@@ -599,7 +375,257 @@ main .sobre {
     font-size: medium;
 }
 
+.img_card{
+    position: relative;
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center it */
 
+}
+
+.img_card .content_card {
+    position: absolute; /* Position the background text */
+    bottom: 2rem; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 20px; /* Some padding */
+}
+
+/* PROJECTS */
+
+.projects {
+    padding: 30px;
+    justify-content: center;
+    background-color: #151515;
+}
+
+.projects ul {
+    justify-content: center;
+    display: flex;
+}
+
+.project_models ul li {
+    cursor: pointer;
+    margin-right: 23px;
+}
+
+.project_models ul li button{
+    cursor: pointer;
+    font-family: 'Poppins';
+    background-color: #222;
+    border: 1px solid #333;
+    color: #707070;
+    padding: 6px 20px;
+}
+
+.project_models ul li.ativo {
+    background-color: #dc3545;
+    color: #151515;
+    font-weight: bold;
+}
+
+
+.projects_armazenamento ul {
+    display: grid;
+    margin-top: 60px;
+    gap: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects_armazenamento ul li {
+    display: none;
+    max-width: 100%;
+    height: 100%;
+}
+
+
+.projects_armazenamento ul li.ativo {
+    display: block;
+    animation: animationButton 2s ease-in-out forwards;
+}
+
+.projects_armazenamento ul li img {
+    cursor: pointer;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.col_projects .card{
+    background-color: #393b5b;
+    color: aliceblue;
+}
+
+.projects a {
+    background-color: #222;
+    padding: 20px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    justify-self: center;
+    border-radius: 3px;
+    color: #707070;
+    border: 1px solid #333;
+}
+
+.pagination span {
+    background-color: #222;
+    padding: 20px 20px;
+    justify-self: center;
+    border-radius: 3px;
+    color: #707070;
+    border: 1px solid #333;
+}
+
+.pagination button {
+    background-color: #222;
+    padding: 20px 20px;
+    justify-self: center;
+    border-radius: 3px;
+    color: #707070;
+    border: 1px solid #333;
+}
+
+.list_skills ul li img{
+    width: 1.3rem;
+}
+
+.content_btn_icons_skills{
+    display: flex;
+}
+
+.content_btn_icons_skills .btn-group form{
+    margin-right: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #000000;
+    padding: 30px;
+}
+
+.footer_sociais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+}
+
+.footer_sociais li {
+    border-radius: 50%;
+    background-color: #7e8ca2;
+    border: 1px solid #0f0f0f;
+}
+
+.footer_sociais li i {
+    padding: 30px;
+    font-size: 1.5rem;
+    color: 363636;
+}
+
+.footer_sociais li:hover {
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    background-color: #95a2d2;
+}
+
+.footer_sociais::before {
+    position: absolute;
+    content: '';
+    bottom: -30px;
+    height: 5px;
+    width: 200px;
+    background-color: #222;
+}
+
+.footer_sociais::before:hover {
+    background-color: #95a2d2;
+}
+
+footer .footer_comercial {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 90px 0;
+    font-family: 'Poppins';
+}
+
+/* ANIMACAO */
+
+@keyframes pisca {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+@keyframes inicializar {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes sobeSecao {
+    from {
+        transition: .3s;
+        transform: translate3d(120px, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes animationButton {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -90px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0px, 0);
+    }
+}
+
+
+
+/* RESPONSIVO */
+
+@media(min-width: 800px) {
+    .section-div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 14px;
+        background-image: None;
+        background-position-x: 4rem;
+        background-size: 1px;
+
+    }
+
+    .col_projects{
+        width: 50%;
+    }
+
+    .container_projects{
+        max-width: auto;
+
+    }
+}
 
 @media (max-width: 1089px) {
 
@@ -652,144 +678,73 @@ main .sobre {
 }
 
 
-/* PROJECTS */
-
-.projects {
-    padding: 30px;
-    display: grid;
-    gap: 30px;
-    justify-content: center;
-    background-color: #151515;
-}
-
-.projects ul {
-    justify-content: center;
-    display: flex;
-    gap: 30px;
-}
-
-.project_models ul li {
-    cursor: pointer;
-}
-
-.project_models ul li button{
-    cursor: pointer;
-    font-family: 'Poppins';
-    background-color: #222;
-    border: 1px solid #333;
-    color: #707070;
-    padding: 6px 20px;
-}
-
-.project_models ul li.ativo {
-    background-color: #dc3545;
-    color: #151515;
-    font-weight: bold;
-}
-
-
-.projects_armazenamento ul {
-    display: grid;
-    margin-top: 60px;
-    gap: 20px;
-    justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.projects_armazenamento ul li {
-    display: none;
-    max-width: 100%;
-    height: 100%;
-}
-
-
-
-.projects_armazenamento ul li.ativo {
-    display: block;
-    animation: animationButton 2s ease-in-out forwards;
-}
-
-.projects_armazenamento ul li img {
-    cursor: pointer;
-    max-width: 100%;
-    height: 100%;
-    border-radius: 4px;
-}
-
-.projects a {
-    background-color: #222;
-    text-decoration: none;
-    padding: 20px 40px;
-    justify-self: center;
-    border-radius: 3px;
-    color: #707070;
-    border: 1px solid #333;
-}
-
-
-@keyframes animationButton {
-    0% {
-        opacity: 0;
-        transform: translate3d(0, -90px, 0);
+@media(max-width: 992px) {
+    .section-div img {
+        display: none;
     }
 
-    100% {
-        opacity: 1;
-        transform: translate3d(0, 0px, 0);
+    .section-div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 14px;
+        background-image: None;
+        background-position-x: 4rem;
     }
-}
 
 
-/* FOOTER */
+    header {
+        justify-content: space-between;
+        padding: 10px 10px;
+    }
 
-footer {
-    background-color: #000000;
-    padding: 30px;
-}
+    header .navegacao-primaria {
+        display: none;
+    }
 
-.footer_sociais {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    position: relative;
-    align-items: center;
-}
+    #nav_bar i{
+        display: block;
+    }
 
-.footer_sociais li {
-    border-radius: 50%;
-    background-color: #212020;
-    border: 1px solid #333;
-}
+    header i {
+        color: #f7f7f7;
+        font-size: 3rem;
+    }
 
-.footer_sociais li i {
-    padding: 30px;
-    font-size: 1.5rem;
-    color: 363636;
-}
+    header .navegacao-primaria.ativado {
+        background: #202539;
+        position: absolute;
+        display: grid;
+        top: 62px;
+        color: #fff;
+        z-index: 1;
+        padding: 52px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 1px;
+        animation: sobeSecao .3s ease-in-out forwards;
+        width: 100%;
+        text-align: center;
+    }
 
-.footer_sociais li:hover {
-    transition: .3s ease-in-out;
-    cursor: pointer;
-    background-color: #95a2d2;
-}
+    .sobre img {
+        grid-column: 1/-1;
+        justify-self: center;
+        display: block;
+    }
 
-.footer_sociais::before {
-    position: absolute;
-    content: '';
-    bottom: -30px;
-    height: 5px;
-    width: 200px;
-    background-color: #222;
-}
+    .sobre_conteudo {
+        grid-column: 1/-1;
+    }
 
-.footer_sociais::before:hover {
-    background-color: #95a2d2;
-}
-footer .footer_comercial {
-    text-align: center;
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin: 90px 0;
-    font-family: 'Poppins';
+    .content_btn_icons_skills{
+        display: block;
+    }
+    .content_btn_icons_skills .btn-group{
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    .content_btn_icons_skills .btn-group form{
+        margin-right: 10px;
+    }
 }

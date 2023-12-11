@@ -66,7 +66,7 @@ def image_resize(field_img, size=(1280, 720)):
 def make_thumbnail(instance, field_img: str, field_thumbnail: str, size=(80, 80)):
     image = Img.open(getattr(instance, field_img))
 
-    image.thumbnail(size, Img.ANTIALIAS)
+    image.thumbnail(size, Img.LANCZOS)
     thumbnail_name, thumbnail_extension = os.path.splitext(getattr(instance, field_img).name)
     thumbnail_file = thumbnail_name + '_thumbnail' + thumbnail_extension
 

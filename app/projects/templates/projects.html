@@ -1,10 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+     <div class="album py-3">
+        <div class="container container_projects">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+               {% for project in projects %}
+                    <div class="col col_projects">
+                      <div class="card shadow-sm">
+                          <img src="{{ project.cover.url }}" class="card-img-top" width="100%" height="225">
+                        <div class="card-body">
+                            <h4 class="text-start">{{ project.title }}</h4>
+                          <p class="card-text text-start">
+                              {{ project.description }}
+                          </p>
+                              <div class="content_btn_icons_skills justify-content-between align-items-center">
+                                <div class="btn-group">
+
+                                    <form action="{{ project.demo_link }}" method="get" target="_blank">
+                                         <button type="submit" class="btn btn-sm btn-outline-light">Demo</button>
+                                    </form>
+
+                                    <form action="{{ project.source_link }}" method="get" target="_blank">
+                                         <button type="submit" class="btn btn-sm btn-outline-light">Github</button>
+                                    </form>
+
+                                </div>
+                                <div class="list_skills">
+                                    <ul class="d-flex list-unstyled mt-auto" style="margin: auto;">
+                                        {{ project.icons.icons|safe }}
+                                    </ul>
+                              </div>
+
+
+                              </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+               {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    <div class="container-fluid">
+
+    <nav aria-label="...">
+        <ul class="pagination pagination-projects">
+              <input type="hidden" id="id_page_itens" name="page_itens" value="{{ page_obj.object_list|length }}">
+              <input type="hidden" id="id_page_index" name="page_index" value="{{ page_obj.number }}">
+
+              {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <button type="button" class="page-link" onclick="get_projects({{page_obj.previous_page_number}})">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </li>
+              {% else %}
+                  <li class="page-item disabled">
+                      <a class="page-link" href="#"><i class="fas fa-arrow-left"></i></a>
+                  </li>
+               {% endif %}
+
+            {% for num_page in  page_obj.paginator.page_range %}
+              {% if page_obj.number == num_page %}
+                <li class="page-item active">
+                    <span class="page-link">
+                        {{ num_page }}
+                        <span class="sr-only">(current)</span>
+                    </span>
+                </li>
+              {% else %}
+                <li class="page-item">
+                    <button type="button" class="page-link"  onclick="get_projects({{ num_page }})">
+                        {{ num_page }}
+                    </button>
+                </li>
+              {% endif %}
+
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                   <button type="button" class="page-link"
+                           onclick="get_projects({{ page_obj.next_page_number }})">
+                       <i class="fas fa-arrow-right"></i>
+                   </button>
+
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link"  href="#"><i class="fas fa-arrow-right"></i></a>
+                </li>
+            {% endif%}
+        </ul>
+    </nav>
+</div>

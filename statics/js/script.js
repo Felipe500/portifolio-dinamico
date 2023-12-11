@@ -28,10 +28,6 @@ function ativacaoMenu(){
 ativacaoMenu()
 
 
-
-
-
-
 const listaALL = document.querySelectorAll('.projects_armazenamento ul li');
 const buttonGeral = document.querySelectorAll('.project_navegacao li');
 const buttonALL = document.querySelector('.project_models .all');
@@ -53,58 +49,13 @@ buttonGeral.forEach((event,index)=>{
     })
 })
 
-function showLista(lista, buttom = "all"){
-    lista.forEach((item)=>{
-        item.classList.remove('ativo');
-    });
 
-    if(buttom == 'design'){
-        lista[0].classList.add('ativo')
-        lista[1].classList.add('ativo')
-    }
-    if(buttom == 'graphic'){
-        lista[2].classList.add('ativo');
-        lista[3].classList.add('ativo');
-    }
-
-    if(buttom == 'website'){
-        lista[4].classList.add('ativo');
-        lista[5].classList.add('ativo');
-        lista[6].classList.add('ativo');
-        lista[7].classList.add('ativo');
-    }
-
-    if(buttom == 'all'){
-        lista[0].classList.add('ativo')
-        lista[1].classList.add('ativo')
-        lista[2].classList.add('ativo');
-        lista[3].classList.add('ativo');
-        lista[4].classList.add('ativo');
-        lista[5].classList.add('ativo');
-        lista[6].classList.add('ativo');
-        lista[7].classList.add('ativo');
-    }
+function ScrollHomeFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-buttonGeral.forEach((item)=>{
-    item.addEventListener('click', (e)=>{
-        let currentButton = e.target;
-        if(currentButton.classList.contains('all')){
-            showLista(listaALL);
-        } if(currentButton.classList.contains('design')){
-            showLista(listaALL, "design")
-        }
-
-        if(currentButton.classList.contains('graphic')){
-            showLista(listaALL, "graphic")
-        }
-
-        if(currentButton.classList.contains('website')){
-            showLista(listaALL, "website")
-        }
-
-        if(currentButton.classList.contains('all')){
-            showLista(listaALL, "all")
-        }
-    });
-});
+function ScrollHomeFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

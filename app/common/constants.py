@@ -23,6 +23,19 @@ default_website = {
 
 TIME_EXPERIENCE_SKILL = """<li><i class="fa-sharp fa-solid fa-star"></i></li>"""
 
-TYPE_PROJECT = {
+ICONS = {
+    "plain": """
+    <li class="d-flex align-items-center">
+        <i class="devicon-{}-plain"></i>
+    </li>
+        """,
+    "original": """
+    <li class="d-flex align-items-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{}/{}-original.svg" />
+    </li>
+        """,
+}
 
+SET_PLAIN_ICONS = {
+    'django': 'plain'
 }

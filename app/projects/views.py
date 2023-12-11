@@ -5,10 +5,10 @@ from .models import Project
 
 
 class ProjectListView(ListView):
-    paginate_by = 8
+    paginate_by = 3
     model = Project
     fields = '__all__'
-    template_name = 'vendas/views_ajax/lista_vendas.html'
+    template_name = 'projects.html'
     form_filter = None
 
     def get_queryset(self):
@@ -23,5 +23,6 @@ class ProjectListView(ListView):
         self.request.session['query'] = self.request.GET.get('query', None)
         paginator = self.paginator_class(self.get_queryset(), self.paginate_by)
 
-        context['sales'] = paginator.page(page)
+        context['projects'] = paginator.page(page)
         return context
+
