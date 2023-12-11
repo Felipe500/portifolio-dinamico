@@ -14,8 +14,8 @@ JAZZMIN_SETTINGS = {
 
 
     "order_with_respect_to": [
-        "dashboard",
         "accounts",
+        "auth",
         "app_website",
         "app_website_data",
         "app_historic",
