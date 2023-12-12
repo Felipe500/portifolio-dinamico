@@ -15,8 +15,8 @@
                 <p>{{ website.header_description }}</p>
 
                 <div id="button_link_grid" class="btn-group">
-                    <a href="{{ website.linkedin }}" class="btn button_link" >  <i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="{{ website.github }}" class="btn button_link"> <i class="fa-brands fa-github-alt"></i> </a>
+                    <a href="{{ website.linkedin }}" class="btn button_link" target="_blank">  <i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="{{ website.github }}" class="btn button_link" target="_blank"> <i class="fa-brands fa-github-alt"></i> </a>
                 </div>
             </div>
 
@@ -180,7 +180,7 @@
             </div>
             <nav aria-label="navegação de links sociais">
                 <ul class="footer_sociais">
-                    <li><i class="fa-brands fa-whatsapp"></i><a href="#"></a></i></li>
+                    <li><a href="https://api.whatsapp.com/send?phone={{ website.phone }}"><i class="fa-brands fa-whatsapp"></i></a></li>
                     <li><i class="fa-regular fa-envelope"></i></li>
                     <li><i class="fa-brands fa-linkedin"></i></li>
                     <li><i class="fa-brands fa-github"><a href="#"></a></i></li>
