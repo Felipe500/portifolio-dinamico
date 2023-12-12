@@ -19,9 +19,9 @@ python manage.py collectstatic --noinput
 python manage.py collectstatic --noinput --settings=config.settings.production
 
 echo  "### Restart gunicorn service and socket ###"
-sudo systemctl daemon-reload
 sudo systemctl restart my_portifolio.socket
 sudo systemctl restart my_portifolio.service
+sudo systemctl daemon-reload
 
 
 echo "### Create symbolic link nginx config ###"
