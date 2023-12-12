@@ -53,7 +53,7 @@ LOGGING = {
             'level': 'ERROR',
         },
         'members_enable': {
-            'handlers': ['members_enable'],
+            'handlers': ['file_info'],
             'level': 'INFO',
         },
     },
