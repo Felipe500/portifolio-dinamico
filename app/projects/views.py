@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from django.views import View
 from django.views.generic import ListView
 from .models import Project
 
@@ -14,8 +12,8 @@ class ProjectListView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('query', None)
         if query:
-            return self.model.objects.filter(client__name_unaccent__icontains=query)
-        return self.model.objects.all()
+            return self.model.objects.filter(title__name__unaccent__icontains=query)
+        return self.model.objects.filter(id=50)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

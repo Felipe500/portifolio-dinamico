@@ -1,6 +1,6 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from .models import SoftSkill, HardSkill, CardSkill
+from .models import HardSkill, CardSkill
 
 
 @receiver(post_save, sender=HardSkill)

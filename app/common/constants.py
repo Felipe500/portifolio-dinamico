@@ -5,9 +5,11 @@ default_website = {
     "header_profession": "Desenvolvedor fullstack",
     "header_description": "Fale comigo",
     "title": "Sobre Mim",
-    "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-    "name": "",
-    "email": "",
+    "content": """Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
+     unknown printer took a galley of type and scrambled it to make a type specimen book.""",
+    "name": "seu nome",
+    "email": "email@email.com",
     "phone": "",
     "birth_date": datetime.now().date(),
     "is_freelance": True,

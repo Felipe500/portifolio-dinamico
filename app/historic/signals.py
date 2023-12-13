@@ -1,7 +1,6 @@
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import Historic, HistoricAcademic, HistoricProfessional
-from app.common.constants import default_website
 
 
 @receiver(post_save, sender=HistoricAcademic)

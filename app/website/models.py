@@ -36,7 +36,7 @@ class Website(BaseModel):
     name = models.CharField(max_length=255, default="Luiz Santana")
     email = models.EmailField(max_length=255, default="email@email.com")
     phone = models.CharField(max_length=16, verbose_name="Telefone", default="879956080")
-    birth_date = models.DateField(default=datetime.date.today(), verbose_name="Data de Nascimento")
+    birth_date = models.DateField(default=datetime.date.today, verbose_name="Data de Nascimento")
     is_freelance = models.BooleanField(default=False)
     nationality = models.CharField(max_length=80, blank=True, null=True, default="Brasileira")
     address = models.CharField(max_length=80, blank=True, null=True)

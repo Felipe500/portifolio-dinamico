@@ -4,7 +4,7 @@
 
 {% load static %}
 
-{% load filters %}
+{% load tags %}
 
 {% block main %}
 
@@ -49,9 +49,9 @@
                         <p><i class="fa-solid fa-calendar-days"></i>Data de nascimento: {{ website.birth_date }}</p>
                         <p><i class="fa-sharp fa-solid fa-laptop-code"></i>Freelance: {% if website.is_freelance %} Sim {% else %} Não disponível{% endif %}</p>
                         <p><i class="fa-solid fa-location-dot"></i>Endereço: {{ website.address }}</p>
-                        <p><i class="fa-sharp fa-solid fa-globe"></i>Idiomas faladas: {{ website.languages }}</p>
+                        <p><i class="fa-sharp fa-solid fa-globe"></i>Idiomas faladas: {{ website.languages|format_list_language }}</p>
                         <p><i class="fa-solid fa-flag"></i>Nacionalidade: {{ website.nationality }}</p>
-                        <p><i class="fa-solid fa-phone-volume"></i>Phone: {{ website.phone }}</p>
+                        <p><i class="fa-solid fa-phone-volume"></i>Celular: {{ website.phone }}</p>
                         <p><i class="fa-solid fa-envelope"></i>Email: {{ website.email }}</p>
                     </div>
                 </div>
