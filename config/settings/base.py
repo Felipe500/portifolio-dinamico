@@ -1,4 +1,4 @@
-from decouple import config
+from decouple import config, Csv
 from dj_database_url import parse as db_url
 from pathlib import Path
 
@@ -10,7 +10,7 @@ DEBUG = config("DEBUG", default=False)
 
 ENV = config("ENV", default="local", cast=str).lower()
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')], default='*')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 INSTALLED_APPS = [
     'jazzmin',
