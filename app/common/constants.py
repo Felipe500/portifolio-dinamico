@@ -10,7 +10,7 @@ default_website = {
      unknown printer took a galley of type and scrambled it to make a type specimen book.""",
     "name": "seu nome",
     "email": "email@email.com",
-    "phone": "",
+    "phone": "86999556677",
     "birth_date": datetime.now().date(),
     "is_freelance": True,
     "nationality": "Brasileira",
