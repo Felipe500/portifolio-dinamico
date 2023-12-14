@@ -1,5 +1,5 @@
-DIR_PROJECT_NAME=portifolio-dev
-BASE=/root/projects/app_portifolio/$DIR_PROJECT_NAME
+DIR_PROJECT_NAME=demo-portifolio-dev
+BASE=/root/projects/demos/portifolio-dev/$DIR_PROJECT_NAME
 
 echo "### PROJECT 1 1 ###"
 echo "ENTER FOLDER PROJECT"
@@ -25,7 +25,7 @@ sudo systemctl daemon-reload
 
 
 echo "### Create symbolic link nginx config ###"
-sudo ln -sfn /$BASE/nginx/my_portifolio.conf /etc/nginx/sites-enabled
+sudo ln -sfn /$BASE/nginx/demo_portifolio.conf /etc/nginx/sites-enabled
 if sudo nginx -t 2>&1 | grep -q 'successful'; then
     echo "### Reload Nginx ###"
     sudo /etc/init.d/nginx reload
