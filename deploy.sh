@@ -1,7 +1,7 @@
 DIR_PROJECT_NAME=demo-portifolio-dev
 BASE=/root/projects/demos/portifolio-dev/$DIR_PROJECT_NAME
 ENV_FOLDER=env
-
+FOLDER_MEDIA="media"
 echo "### PROJECT 1 1 ###"
 echo "ENTER FOLDER PROJECT"
 cd $BASE && . ../$ENV_FOLDER/bin/activate
@@ -15,13 +15,19 @@ python manage.py check --settings=config.settings.production
 echo "### Migration ###"
 python manage.py migrate --settings=config.settings.production
 
-echo "### Sync with S3 ###"
+echo "### very folder 'media' ###"
+if [ -f "$FOLDER_MEDIA" ]; then
+   echo "existing media folder.(ignore...)"
+else
+    echo "Folder 'media' does not exist." && sudo mkdir "$FOLDER_MEDIA" && echo "folder created successfully ;)"
+fi
+
+echo "### collectstatic ###"
 python manage.py collectstatic --noinput
-python manage.py collectstatic --noinput --settings=config.settings.production
 
 echo  "### Restart gunicorn service and socket ###"
-sudo systemctl restart my_portifolio.socket
-sudo systemctl restart my_portifolio.service
+sudo systemctl restart demo_portifolio.socket
+sudo systemctl restart demo_portifolio.service
 sudo systemctl daemon-reload
 
 echo "### Create symbolic link nginx config ###"
