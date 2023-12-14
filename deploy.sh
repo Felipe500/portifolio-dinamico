@@ -1,9 +1,10 @@
 DIR_PROJECT_NAME=demo-portifolio-dev
 BASE=/root/projects/demos/portifolio-dev/$DIR_PROJECT_NAME
+ENV_FOLDER=env
 
 echo "### PROJECT 1 1 ###"
 echo "ENTER FOLDER PROJECT"
-cd $BASE && . ../env/bin/activate
+cd $BASE && . ../$ENV_FOLDER/bin/activate
 
 echo "### Pip install ###"
 poetry install
@@ -23,7 +24,6 @@ sudo systemctl restart my_portifolio.socket
 sudo systemctl restart my_portifolio.service
 sudo systemctl daemon-reload
 
-
 echo "### Create symbolic link nginx config ###"
 sudo ln -sfn /$BASE/nginx/demo_portifolio.conf /etc/nginx/sites-enabled
 if sudo nginx -t 2>&1 | grep -q 'successful'; then
@@ -32,5 +32,3 @@ if sudo nginx -t 2>&1 | grep -q 'successful'; then
 else
     echo "Nginx Fail"
 fi
-
-
