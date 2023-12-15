@@ -27,14 +27,14 @@ else
     sudo mkdir "$FOLDER_MEDIA" && \
     echo "folder created successfully ;)"
 fi
-sudo chown -R www-data:www-data $BASE/$FOLDER_MEDIA
+sudo chown -R www-data:www-data $BASE/$FOLDER_MEDIA/
 chmod -R 755 $BASE/$FOLDER_MEDIA
 chmod -R 644 $BASE/$FOLDER_MEDIA/
 
 echo "### very folder static files ###"
 python manage.py collectstatic --noinput
 echo "$BASE/$FOLDER_STATICFILES"
-sudo chown -R www-data:www-data $BASE/$FOLDER_STATICFILES
+sudo chown -R www-data:www-data $BASE/$FOLDER_STATICFILES/
 chmod -R 755 $BASE/$FOLDER_STATICFILES
 chmod -R 644 $BASE/$FOLDER_STATICFILES/
 
