@@ -1,7 +1,7 @@
 DIR_PROJECT_NAME=demo-portifolio-dev
 BASE=/root/projects/demos/portifolio-dev/$DIR_PROJECT_NAME
 ENV_FOLDER=env
-FOLDER_MEDIA="media"
+FOLDER_MEDIA="/media"
 FOLDER_STATICFILES="staticfiles"
 
 echo "### PROJECT 1 1 ###"
