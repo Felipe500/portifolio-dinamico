@@ -4,8 +4,8 @@ import os
 
 DEBUG = False
 
-STATIC_ROOT = '/media/demo-portifolio-dev/staticfiles/'
-MEDIA_ROOT = '/media/demo-portifolio-dev/media/'
+STATIC_ROOT = '/media/demo-portifolio-dev/staticfiles'
+MEDIA_ROOT = '/media/demo-portifolio-dev/media'
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
