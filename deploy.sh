@@ -17,26 +17,26 @@ python manage.py check --settings=config.settings.production
 echo "### Migration ###"
 python manage.py migrate --settings=config.settings.production
 
-echo "### very folder 'media' ###"
-echo "$BASE/$FOLDER_MEDIA"
-
-if [ -d "$FOLDER_MEDIA" ]; then
-   echo "existing media folder.(ignore...)"
-else
-    echo "Folder 'media' does not exist." && \
-    sudo mkdir "$FOLDER_MEDIA" && \
-    echo "folder created successfully ;)"
+echo "### ====================================== ###"
+echo "### very folder '/media/$DIR_PROJECT_NAME' ###"
+echo "### ====================================== ###"
+if [ ! -d "/media/$DIR_PROJECT_NAME" ]; then
+    sudo mkdir "/media/$DIR_PROJECT_NAME"
 fi
-sudo chown -R www-data:www-data $BASE/$FOLDER_MEDIA/
-chmod -R 755 $BASE/$FOLDER_MEDIA
-chmod -R 644 $BASE/$FOLDER_MEDIA/
 
+echo "### ====================================== ###"
+echo "### very folder 'media' ###"
+echo "### ====================================== ###"
+if [ ! -d "/media/$DIR_PROJECT_NAME/$FOLDER_MEDIA" ]; then
+    sudo mkdir "/media/$DIR_PROJECT_NAME/$FOLDER_MEDIA"
+fi
+
+echo "### ====================================== ###"
 echo "### very folder static files ###"
+echo "### ====================================== ###"
 python manage.py collectstatic --noinput
-echo "$BASE/$FOLDER_STATICFILES"
-sudo chown -R www-data:www-data $BASE/$FOLDER_STATICFILES/
-chmod -R 755 $BASE/$FOLDER_STATICFILES
-chmod -R 644 $BASE/$FOLDER_STATICFILES/
+cp -r -f "$BASE/$FOLDER_STATICFILES" "/media/$DIR_PROJECT_NAME/"
+
 
 echo  "### Restart gunicorn service and socket ###"
 sudo systemctl restart demo_portifolio.socket
@@ -51,3 +51,7 @@ if sudo nginx -t 2>&1 | grep -q 'successful'; then
 else
     echo "Nginx Fail"
 fi
+
+echo "### ====================================== ###"
+echo "### deployment is complete. check website in production ###"
+echo "### ====================================== ###"

@@ -4,13 +4,11 @@ import os
 
 DEBUG = False
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = '/media/demo-portifolio-dev/staticfiles/'
+MEDIA_ROOT = '/media/demo-portifolio-dev/media/'
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-
-STATICFILES_DIRS = [(os.path.join(BASE_DIR, 'static'))]
 
 LOGGING = {
     'version': 1,
