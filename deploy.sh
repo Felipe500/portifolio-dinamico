@@ -25,11 +25,15 @@ else
     sudo mkdir "$FOLDER_MEDIA" && \
     echo "folder created successfully ;)"
 fi
+sudo chown -R www-data:www-data $BASE/$FOLDER_MEDIA
 chmod -R 755 $BASE/$FOLDER_MEDIA
+chmod -R 644 $BASE/$FOLDER_MEDIA/
 
 echo "### very folder static files ###"
 python manage.py collectstatic --noinput
+sudo chown -R www-data:www-data $BASE/$FOLDER_STATICFILES
 chmod -R 755 $BASE/$FOLDER_STATICFILES
+chmod -R 644 $BASE/$FOLDER_STATICFILES/
 
 echo  "### Restart gunicorn service and socket ###"
 sudo systemctl restart demo_portifolio.socket
