@@ -2,6 +2,8 @@ DIR_PROJECT_NAME=demo-portifolio-dev
 BASE=/root/projects/demos/portifolio-dev/$DIR_PROJECT_NAME
 ENV_FOLDER=env
 FOLDER_MEDIA="media"
+FOLDER_STATICFILES="staticfiles"
+
 echo "### PROJECT 1 1 ###"
 echo "ENTER FOLDER PROJECT"
 cd $BASE && . ../$ENV_FOLDER/bin/activate
@@ -19,11 +21,15 @@ echo "### very folder 'media' ###"
 if [ -f "$FOLDER_MEDIA" ]; then
    echo "existing media folder.(ignore...)"
 else
-    echo "Folder 'media' does not exist." && sudo mkdir "$FOLDER_MEDIA" && echo "folder created successfully ;)"
+    echo "Folder 'media' does not exist." && \
+    sudo mkdir "$FOLDER_MEDIA" && \
+    echo "folder created successfully ;)"
 fi
+chmod -R 755 $FOLDER_MEDIA
 
-echo "### collectstatic ###"
+echo "### very folder static files ###"
 python manage.py collectstatic --noinput
+chmod -R 755 $FOLDER_STATICFILES
 
 echo  "### Restart gunicorn service and socket ###"
 sudo systemctl restart demo_portifolio.socket
