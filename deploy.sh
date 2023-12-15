@@ -1,7 +1,7 @@
 DIR_PROJECT_NAME=demo-portifolio-dev
 BASE=/root/projects/demos/portifolio-dev/$DIR_PROJECT_NAME
 ENV_FOLDER=env
-FOLDER_MEDIA="/media"
+FOLDER_MEDIA="media"
 FOLDER_STATICFILES="staticfiles"
 
 echo "### PROJECT 1 1 ###"
@@ -18,7 +18,9 @@ echo "### Migration ###"
 python manage.py migrate --settings=config.settings.production
 
 echo "### very folder 'media' ###"
-if [ -f "$FOLDER_MEDIA" ]; then
+echo "$BASE/$FOLDER_MEDIA"
+
+if [ -d "$FOLDER_MEDIA" ]; then
    echo "existing media folder.(ignore...)"
 else
     echo "Folder 'media' does not exist." && \
@@ -31,6 +33,7 @@ chmod -R 644 $BASE/$FOLDER_MEDIA/
 
 echo "### very folder static files ###"
 python manage.py collectstatic --noinput
+echo "$BASE/$FOLDER_STATICFILES"
 sudo chown -R www-data:www-data $BASE/$FOLDER_STATICFILES
 chmod -R 755 $BASE/$FOLDER_STATICFILES
 chmod -R 644 $BASE/$FOLDER_STATICFILES/
