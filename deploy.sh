@@ -20,22 +20,22 @@ python manage.py migrate --settings=config.settings.production
 echo "### ====================================== ###"
 echo "### very folder '/media/$DIR_PROJECT_NAME' ###"
 echo "### ====================================== ###"
-if [ ! -d "/media/$DIR_PROJECT_NAME" ]; then
-    sudo mkdir "/media/$DIR_PROJECT_NAME"
+if [ ! -d "/home/$DIR_PROJECT_NAME" ]; then
+    sudo mkdir "/home/$DIR_PROJECT_NAME"
 fi
 
 echo "### ====================================== ###"
 echo "### very folder 'media' ###"
 echo "### ====================================== ###"
-if [ ! -d "/media/$DIR_PROJECT_NAME/$FOLDER_MEDIA" ]; then
-    sudo mkdir "/media/$DIR_PROJECT_NAME/$FOLDER_MEDIA"
+if [ ! -d "/home/$DIR_PROJECT_NAME/$FOLDER_MEDIA" ]; then
+    sudo mkdir "/home/$DIR_PROJECT_NAME/$FOLDER_MEDIA"
 fi
 
 echo "### ====================================== ###"
 echo "### very folder static files ###"
 echo "### ====================================== ###"
 python manage.py collectstatic --noinput
-cp -r -f "$BASE/$FOLDER_STATICFILES" "/media/$DIR_PROJECT_NAME/"
+cp -r -f "$BASE/$FOLDER_STATICFILES" "/home/$DIR_PROJECT_NAME/"
 
 
 echo  "### Restart gunicorn service and socket ###"
