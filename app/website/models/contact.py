@@ -6,13 +6,12 @@ from ..models.website import Website
 
 
 class Contact(BaseModel):
-    email = models.CharField(max_length=255, verbose_name="email", null=True, blank=True)
-    whatsapp = models.CharField(max_length=255, verbose_name="whatsapp", null=True, blank=True)
-    github = models.CharField(max_length=255, verbose_name="Github", null=True, blank=True)
-    gitlab = models.CharField(max_length=255, verbose_name="Gitlab", null=True, blank=True)
-    stackoverflow = models.CharField(max_length=255, verbose_name="Stackoverflow", null=True, blank=True)
-    linkedin = models.CharField(max_length=255, verbose_name="Linkedin", null=True, blank=True)
-    facebook = models.CharField(max_length=255, verbose_name="Facebook", null=True, blank=True)
+    email = models.CharField(max_length=255, verbose_name="email", default="email@gmail.com")
+    whatsapp = models.CharField(max_length=255, verbose_name="whatsapp", default="86999605077")
+    github = models.CharField(max_length=255, verbose_name="Github", default="gitlab.com")
+    gitlab = models.CharField(max_length=255, verbose_name="Gitlab", default="github.com")
+    stackoverflow = models.CharField(max_length=255, verbose_name="Stackoverflow", default="stackoverflow.com")
+    linkedin = models.CharField(max_length=255, verbose_name="Linkedin", default="linkedin.com")
 
     website = models.OneToOneField(
         "app_website.Website",
@@ -42,6 +41,5 @@ class Contact(BaseModel):
             'gitlab': self.gitlab,
             'stackoverflow': self.stackoverflow,
             'linkedin': self.linkedin,
-            'facebook': self.facebook,
         }
         Website.objects.filter(id=self.website.id).update(contact=data)
