@@ -57,9 +57,10 @@ class Historic(BaseModel):
                 instance.end_date, "%B %Y"
             ).title()
             list_historic.append(data_json)
+
         data_historic['academic'] = [d for d in list_historic if d["type"] in ["academic"]]
         data_historic['professional'] = [d for d in list_historic if d["type"] in ["professional"]]
-        print(data_historic)
+
         Website.objects.filter(id=self.website.id).update(historic=data_historic)
 
 
