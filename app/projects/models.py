@@ -60,13 +60,11 @@ class Project(BaseModel):
         super().save(*args, **kwargs)
 
     def update_icons(self):
-        print('update_icons')
         html = ""
         for tag in self.tags:
             if tag in list(SET_PLAIN_ICONS.keys()):
                 html += ICONS['plain'].format(tag)
             else:
                 html += ICONS['original'].format(tag, tag)
-        print(html)
+
         Project.objects.get_queryset().filter(id=self.id).update(icons={'icons': html})
-        # print(tag)

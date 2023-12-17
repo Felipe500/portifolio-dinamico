@@ -13,4 +13,3 @@ class WebsiteView(View):
             website = default_website
 
         return render(request, "index.html", {"website": website})
-

@@ -49,7 +49,6 @@ class About(BaseModel):
         self.update_about_website()
 
     def update_about_website(self):
-        print(relativedelta(datetime.date.today(),  self.birth_date).years)
         data = {
             'title': self.title or '',
             'content': self.content or '',

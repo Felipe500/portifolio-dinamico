@@ -13,7 +13,7 @@ class ProjectListView(ListView):
         query = self.request.GET.get('query', None)
         if query:
             return self.model.objects.filter(title__name__unaccent__icontains=query)
-        return self.model.objects.filter(id=50)
+        return self.model.objects.get_queryset()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
