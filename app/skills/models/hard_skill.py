@@ -64,5 +64,5 @@ class HardSkill(BaseModel):
 
         for card_skill in card_ids:
             card_skill_[int(card_skill)] = [d for d in list_skill if d["card_id"] in [card_skill]]
-
+        print(card_skill_)
         Website.objects.filter(id=self.website.id).update(skills=card_skill_)

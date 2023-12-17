@@ -27,4 +27,5 @@ class CardSkill(BaseModel):
         skills_card = [obj for obj in CardSkill.objects.get_queryset().values('id', 'name')]
         for skill_card in skills_card:
             skill_card['id'] = str(skill_card['id'])
+        print(skills_card)
         Website.objects.filter(id=self.website.id).update(skills_card=skills_card)

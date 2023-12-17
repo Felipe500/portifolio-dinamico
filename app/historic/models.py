@@ -45,6 +45,7 @@ class Historic(BaseModel):
         return super().save(*args, **kwargs)
 
     def update_historic(self):
+        data_historic = {}
         list_historic = []
         locale.setlocale(locale.LC_ALL, locale.getlocale())
         queryset_historic = Historic.objects.get_queryset().filter(website=self.website)
@@ -56,8 +57,10 @@ class Historic(BaseModel):
                 instance.end_date, "%B %Y"
             ).title()
             list_historic.append(data_json)
-
-        Website.objects.filter(id=self.website.id).update(historic=list_historic)
+        data_historic['academic'] = [d for d in list_historic if d["type"] in ["academic"]]
+        data_historic['professional'] = [d for d in list_historic if d["type"] in ["professional"]]
+        print(data_historic)
+        Website.objects.filter(id=self.website.id).update(historic=data_historic)
 
 
 class HistoricAcademic(Historic):

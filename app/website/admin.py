@@ -1,17 +1,14 @@
 from django.contrib import admin
 
-from .models import Website
-from app.skills.models import HardSkill, CardSkill
+from .models import Website, About, Header
 
 
-class SkillInline(admin.TabularInline):
-    model = HardSkill
-    extra = 1
+class HeaderInline(admin.StackedInline):
+    model = Header
 
 
-class CardHardSkillInline(admin.StackedInline):
-    model = CardSkill
-    extra = 1
+class AboutInline(admin.StackedInline):
+    model = About
 
 
 @admin.register(Website)
@@ -19,7 +16,7 @@ class WebsiteAdmin(admin.ModelAdmin):
     list_display = ("id", "description", "is_active")
     list_display_links = ("id", "description")
     fieldsets = ((None, {"fields": ("description", "is_active")}),)
-    inlines = [SkillInline, CardHardSkillInline]
+    inlines = [HeaderInline, AboutInline,]
 
     def save_model(self, request, obj, form, change):
         if obj.is_active:
@@ -27,3 +24,11 @@ class WebsiteAdmin(admin.ModelAdmin):
                 is_active=False
             )
         super().save_model(request, obj, form, change)
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def has_add_permission(self, request, obj=None):
+        if Website.objects.get_queryset().count() > 2:
+            return False
+        return True

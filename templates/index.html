@@ -8,11 +8,11 @@
 
 {% block main %}
 
-        <section aria-label="landing page" class="section-div" style="background-image: url({{ website.header_photo.url }})">
+        <section aria-label="landing page" class="section-div" style="background-image: url({{ website.header.photo }})">
             <div class="content_header">
-                <h2>{{ website.header_wellcome_title }}</h2>
-                <h2 class="digitando">{{ website.header_profession }}</h2>
-                <p>{{ website.header_description }}</p>
+                <h2>{{ website.header.title }}</h2>
+                <h2 class="digitando">{{ website.header.profession }}</h2>
+                <p>{{ website.header.subtitle }}</p>
 
                 <div id="button_link_grid" class="btn-group">
                     <a href="{{ website.linkedin }}" class="btn button_link" target="_blank">  <i class="fa-brands fa-linkedin-in"></i></a>
@@ -20,9 +20,7 @@
                 </div>
             </div>
 
-            {% if website.header_photo %}
-                <img src="{{ website.header_photo.url }}" alt="ilustrativa imagem de uma pessoa">
-            {% endif %}
+            <img src="{{ website.header.photo }}" alt="ilustrativa imagem de uma pessoa">
 
         </section>
         <main id="about" class="set_main" >
@@ -37,22 +35,20 @@
                     </div>
                 </div>
 
-                {% if website.photo %}
-                    <img src="{{ website.photo.url }}" alt="imagem de uma pessoa ilustrativa">
-                {% endif %}
+                <img src="{{ website.about.photo }}" alt="imagem de uma pessoa ilustrativa">
 
                 <div class="sobre_conteudo">
                     <div class="sobre_texto">
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ website.content }}</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ website.about.content }}</p>
                     </div>
                     <div class="sobre_info">
-                        <p><i class="fa-solid fa-calendar-days"></i>Data de nascimento: {{ website.birth_date }}</p>
-                        <p><i class="fa-sharp fa-solid fa-laptop-code"></i>Freelance: {% if website.is_freelance %} Sim {% else %} Não disponível{% endif %}</p>
-                        <p><i class="fa-solid fa-location-dot"></i>Endereço: {{ website.address }}</p>
-                        <p><i class="fa-sharp fa-solid fa-globe"></i>Idiomas faladas: {{ website.languages|format_list_language }}</p>
-                        <p><i class="fa-solid fa-flag"></i>Nacionalidade: {{ website.nationality }}</p>
-                        <p><i class="fa-solid fa-phone-volume"></i>Celular: {{ website.phone }}</p>
-                        <p><i class="fa-solid fa-envelope"></i>Email: {{ website.email }}</p>
+                        <p><i class="fa-solid fa-calendar-days"></i>Data de nascimento: {{ website.about.birth_date }}</p>
+                        <p><i class="fa-sharp fa-solid fa-laptop-code"></i>Freelance: {% if website.about.is_freelance %} Sim {% else %} Não disponível{% endif %}</p>
+                        <p><i class="fa-solid fa-location-dot"></i>Endereço: {{ website.about.address }}</p>
+                        <p><i class="fa-sharp fa-solid fa-globe"></i>Idiomas faladas: {{ website.about.languages|format_list_language }}</p>
+                        <p><i class="fa-solid fa-flag"></i>Nacionalidade: {{ website.about.nationality }}</p>
+                        <p><i class="fa-solid fa-phone-volume"></i>Celular: {{ website.about.phone }}</p>
+                        <p><i class="fa-solid fa-envelope"></i>Email: {{ website.about.email }}</p>
                     </div>
                 </div>
             </article>
@@ -79,7 +75,7 @@
                         </header>
 
                         <div class="contents">
-                            {% for historic_academic in list_historic_academic %}
+                            {% for historic_academic in website.historic.academic %}
                                 <div class="box_timeline">
                                     <h4>{{ historic_academic.start_date }} - {{ historic_academic.end_date }}</h4>
                                     <h3>{{ historic_academic.institution_company }} - {{ historic_academic.name }}</h3>
@@ -97,7 +93,7 @@
 
                         <div class="contents">
 
-                            {% for historic_professional in list_historic_professional %}
+                            {% for historic_professional in website.historic.professional %}
                                 <div class="box_timeline">
                                     <h4>{{ historic_professional.start_date }} - {{ historic_professional.end_date }}</h4>
                                     <h3>{{ historic_professional.institution_company }} - {{ historic_professional.name }}</h3>
@@ -127,12 +123,12 @@
                 </div>
                     <div class="row g-3 justify-content-evenly">
 
-                        {% for card_skill in cards_skills %}
+                        {% for card_skill in website.skills_card %}
                             <div class="col-md-4">
                                 <div class="my_skill">
                                     <h2><i class="fa-sharp fa-regular fa-star"></i>{{ card_skill.name }}</h2>
 
-                                        {% for skill in skills|get_skills:card_skill.id %}
+                                        {% for skill in website.skills|get_skills:card_skill.id %}
                                             <div class="skill_content">
                                                 <h3>{{ skill.name }}</h3>
                                                 <ul>
@@ -180,10 +176,21 @@
             </div>
             <nav aria-label="navegação de links sociais">
                 <ul class="footer_sociais">
-                    <li><a href="https://api.whatsapp.com/send?phone={{ website.phone }}"><i class="fa-brands fa-whatsapp"></i></a></li>
-                    <li><i class="fa-regular fa-envelope"></i></li>
-                    <li><i class="fa-brands fa-linkedin"></i></li>
-                    <li><i class="fa-brands fa-github"><a href="#"></a></i></li>
+                    <li id="get_whatsapp"><a target="_blank" href="https://api.whatsapp.com/send?phone={{ website.about.phone }}"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li id="get_email">
+                        <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to={{ website.about.email }}&su=assunto&body=conteúdo da mensagem">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li id="get_linkedin">
+                        <a href="{{  website.linkedin }}" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    <li id="get_github">
+                        <a href="{{  website.github }}" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <section class="bg-black py-2 py-md-5">

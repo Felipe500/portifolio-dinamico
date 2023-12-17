@@ -1,26 +1,53 @@
 from datetime import datetime
 
-default_website = {
-    "header_wellcome_title": "Mensagem de boas-vindas",
-    "header_profession": "Desenvolvedor fullstack",
-    "header_description": "Fale comigo",
+default_header = {
+    "title": "Mensagem de boas-vindas",
+    "profession": "Desenvolvedor fullstack",
+    "subtitle": "Fale comigo",
+    "photo": "",
+}
+
+default_about = {
     "title": "Sobre Mim",
     "content": """Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-     unknown printer took a galley of type and scrambled it to make a type specimen book.""",
+                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
+                 unknown printer took a galley of type and scrambled it to make a type specimen book.""",
     "name": "seu nome",
     "email": "email@email.com",
     "phone": "86999556677",
     "birth_date": datetime.now().date(),
+    "yars_life": 20,
     "is_freelance": True,
     "nationality": "Brasileira",
     "address": "Teresina-PI",
-    "languages": ["portugues"],
-    "github": "github",
-    "gitlab": "gitlab",
-    "stackoverflow": "stackoverflow",
-    "linkedin": "linkedin",
-    "facebook": "facebook",
+    "languages": ["português"],
+}
+
+default_historic = {
+    'academic':  [{'id': 1, 'name': 'Analise e desenvolvimento de sistemas', 'institution_company': 'Academia', 'description': 'Estudei em diversas fases da criação de um sistema computacional: levantamento de requisitos, projeto, especificação, documentação, implantação, testes e manutenções. ', 'type': 'academic', 'start_date': 'Dezembro 2017', 'end_date': 'Dezembro 2018', 'address': 'Teresina-PI', 'website': 1}],
+    'professional': [{'id': 2, 'name': 'Back-end', 'institution_company': 'Empresa BR', 'description': 'Trabalhei em aplicações para gerenciar cursos online, fazendo melhorias e adicionando nova features...', 'type': 'academic', 'start_date': 'Dezembro 2017', 'end_date': 'Dezembro 2018', 'address': 'Teresina-PI', 'website': 1}]
+}
+
+
+default_skill_card = [{'id': 1, 'name': 'Backend'}]
+
+
+default_skills = {1: [{'id': 2, 'name': 'django', 'card_id': 1, 'time_experience': '<li><i class="fa-sharp fa-solid fa-star"></i></li><li><i class="fa-solid fa-star-half-stroke"></i></li>'},
+                      {'id': 3, 'name': 'DRF', 'card_id': 1, 'time_experience': '<li><i class="fa-sharp fa-solid fa-star"></i></li>'},
+                      {'id': 1, 'name': 'python', 'card_id': 1, 'time_experience': '<li><i class="fa-solid fa-star-half-stroke"></i></li>'}]}
+
+
+default_website = {
+    "header": default_header,
+    "about": default_about,
+    "historic": default_historic,
+    "skills": default_skills,
+    "skills_card": default_skill_card,
+    "github": "https://github.com",
+    "gitlab": "https://gitlab.com",
+    "stackoverflow": "https://stackoverflow.com/",
+    "linkedin": "https://www.linkedin.com",
+    "facebook": "https://www.facebook.com",
 }
 
 TIME_EXPERIENCE_SKILL = """<li><i class="fa-sharp fa-solid fa-star"></i></li>"""

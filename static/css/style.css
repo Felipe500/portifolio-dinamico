@@ -530,7 +530,27 @@ footer {
 .footer_sociais li:hover {
     transition: .3s ease-in-out;
     cursor: pointer;
-    background-color: #95a2d2;
+    background-color: #fff;
+}
+
+.footer_sociais li a {
+    color: black;
+}
+
+#get_whatsapp a:hover {
+    color: #00ff4c;
+}
+
+#get_email i:hover {
+    color: gold;
+}
+
+#get_linkedin i:hover {
+    color: #301fff;
+}
+
+#get_github i:hover {
+    color: black;
 }
 
 .footer_sociais::before {
