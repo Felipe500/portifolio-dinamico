@@ -43,6 +43,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+LOGIN_REDIRECT_URL = 'admin'
+
 AUTH_USER_MODEL = 'accounts.User'
 
 AUTHENTICATION_BACKENDS = ('app.accounts.backends.AccountsBackend',)

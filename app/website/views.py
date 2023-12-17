@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views import View
 
-from app.common.choices import TYPE_PROJECT
 from app.website.models import Website
 from app.common.constants import default_website
 

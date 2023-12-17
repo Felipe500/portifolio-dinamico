@@ -10,11 +10,7 @@ class Website(BaseModel):
     historic = models.JSONField(default=list, verbose_name="Historicos acadêmicos e profissionais")
     skills = models.JSONField(default=list, verbose_name="Habilidades")
     skills_card = models.JSONField(default=list, verbose_name="Card de Habilidades")
-    github = models.CharField(max_length=255, verbose_name="Github", null=True, blank=True)
-    gitlab = models.CharField(max_length=255, verbose_name="Gitlab", null=True, blank=True)
-    stackoverflow = models.CharField(max_length=255, verbose_name="Stackoverflow", null=True, blank=True)
-    linkedin = models.CharField(max_length=255, verbose_name="Linkedin", null=True, blank=True)
-    facebook = models.CharField(max_length=255, verbose_name="Facebook", null=True, blank=True)
+    contact = models.JSONField(default=dict, verbose_name="Dados para contato")
 
     is_active = models.BooleanField(default=False, verbose_name="Ativo?")
 

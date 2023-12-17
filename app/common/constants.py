@@ -32,10 +32,20 @@ default_historic = {
 default_skill_card = [{'id': 1, 'name': 'Backend'}]
 
 
-default_skills = {1: [{'id': 2, 'name': 'django', 'card_id': 1, 'time_experience': '<li><i class="fa-sharp fa-solid fa-star"></i></li><li><i class="fa-solid fa-star-half-stroke"></i></li>'},
-                      {'id': 3, 'name': 'DRF', 'card_id': 1, 'time_experience': '<li><i class="fa-sharp fa-solid fa-star"></i></li>'},
-                      {'id': 1, 'name': 'python', 'card_id': 1, 'time_experience': '<li><i class="fa-solid fa-star-half-stroke"></i></li>'}]}
+default_skills = {1: [{'id': 2, 'name': 'Python', 'card_id': 1, 'time_experience': '<li><i class="fa-sharp fa-solid fa-star"></i></li><li><i class="fa-solid fa-star-half-stroke"></i></li>'},
+                      {'id': 3, 'name': 'Django', 'card_id': 1, 'time_experience': '<li><i class="fa-sharp fa-solid fa-star"></i></li>'},
+                      {'id': 1, 'name': 'DRF', 'card_id': 1, 'time_experience': '<li><i class="fa-solid fa-star-half-stroke"></i></li>'}]}
 
+
+default_contact = {
+    "email": "email@email.com",
+    "whatsapp": 86999507878,
+    "github": "https://github.com",
+    "gitlab": "https://gitlab.com",
+    "stackoverflow": "https://stackoverflow.com/",
+    "linkedin": "https://www.linkedin.com",
+    "facebook": "https://www.facebook.com",
+}
 
 default_website = {
     "header": default_header,
@@ -43,11 +53,7 @@ default_website = {
     "historic": default_historic,
     "skills": default_skills,
     "skills_card": default_skill_card,
-    "github": "https://github.com",
-    "gitlab": "https://gitlab.com",
-    "stackoverflow": "https://stackoverflow.com/",
-    "linkedin": "https://www.linkedin.com",
-    "facebook": "https://www.facebook.com",
+    "contact": default_contact
 }
 
 TIME_EXPERIENCE_SKILL = """<li><i class="fa-sharp fa-solid fa-star"></i></li>"""

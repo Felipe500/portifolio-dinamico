@@ -15,8 +15,8 @@
                 <p>{{ website.header.subtitle }}</p>
 
                 <div id="button_link_grid" class="btn-group">
-                    <a href="{{ website.linkedin }}" class="btn button_link" target="_blank">  <i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="{{ website.github }}" class="btn button_link" target="_blank"> <i class="fa-brands fa-github-alt"></i> </a>
+                    <a href="{{ website.contact.linkedin }}" class="btn button_link" target="_blank">  <i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="{{ website.contact.github }}" class="btn button_link" target="_blank"> <i class="fa-brands fa-github-alt"></i> </a>
                 </div>
             </div>
 
@@ -176,18 +176,18 @@
             </div>
             <nav aria-label="navegação de links sociais">
                 <ul class="footer_sociais">
-                    <li id="get_whatsapp"><a target="_blank" href="https://api.whatsapp.com/send?phone={{ website.about.phone }}"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li id="get_whatsapp"><a target="_blank" href="https://api.whatsapp.com/send?phone={{ website.contact.whatsapp }}"><i class="fa-brands fa-whatsapp"></i></a></li>
                     <li id="get_email">
-                        <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to={{ website.about.email }}&su=assunto&body=conteúdo da mensagem">
+                        <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to={{ website.contact.email }}&su=assunto&body=conteúdo da mensagem">
                             <i class="fa-regular fa-envelope"></i>
                         </a>
                     </li>
                     <li id="get_linkedin">
-                        <a href="{{  website.linkedin }}" target="_blank">
+                        <a href="{{  website.contact.linkedin }}" target="_blank">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
                     <li id="get_github">
-                        <a href="{{  website.github }}" target="_blank">
+                        <a href="{{  website.contact.github }}" target="_blank">
                             <i class="fa-brands fa-github"></i>
                         </a>
                     </li>
@@ -202,7 +202,7 @@
                       <div class="col-12 col-lg-9">
                         <div class="bg-black border rounded shadow-sm overflow-hidden">
                              <div class="titulo_padrao">
-                                <h1>Contato</h1>
+                                <h1>Contate-me</h1>
                             </div>
                           <form action="#!">
                             <div class="row gy-4 gy-xl-3 p-4 p-xl-5 text-light">
@@ -231,6 +231,10 @@
                                   </span>
                                   <input type="tel" class="form-control" id="phone" name="phone" value="">
                                 </div>
+                              </div>
+                              <div class="col-12">
+                                    <label for="subject" class="form-label">Assunto <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="subject" name="subject" value="" required>
                               </div>
                               <div class="col-12">
                                 <label for="message" class="form-label">Mensagem <span class="text-danger">*</span></label>

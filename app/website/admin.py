@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Website, About, Header
+from .models import Website, About, Header, Contact
 
 
 class HeaderInline(admin.StackedInline):
@@ -11,12 +11,16 @@ class AboutInline(admin.StackedInline):
     model = About
 
 
+class ContactInline(admin.StackedInline):
+    model = Contact
+
+
 @admin.register(Website)
 class WebsiteAdmin(admin.ModelAdmin):
     list_display = ("id", "description", "is_active")
     list_display_links = ("id", "description")
     fieldsets = ((None, {"fields": ("description", "is_active")}),)
-    inlines = [HeaderInline, AboutInline,]
+    inlines = [HeaderInline, AboutInline, ContactInline,]
 
     def save_model(self, request, obj, form, change):
         if obj.is_active:
