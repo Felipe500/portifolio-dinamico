@@ -18,9 +18,7 @@ class Historic(BaseModel):
     institution_company = models.CharField(
         max_length=255, verbose_name="Instituição ou Empresa", null=True, blank=True
     )
-    description = models.TextField(
-        max_length=255, verbose_name="Descrição", null=True, blank=True
-    )
+    description = models.TextField(verbose_name="Descrição", null=True, blank=True)
     type = models.CharField(
         choices=TYPE_HISTORIC, verbose_name="Tipo de ", default=TYPE_HISTORIC.academic
     )
