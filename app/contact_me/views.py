@@ -2,7 +2,6 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
 
-from .models import ContactMe
 from .forms import ContactMeForm
 
 
