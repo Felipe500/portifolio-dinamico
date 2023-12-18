@@ -33,8 +33,12 @@ class Header(BaseModel):
     def __str__(self):
         return f"Cabeçalho | website: {self.website.description}"
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._prev_photo = getattr(self, 'photo', None)
+
     def save(self, *args, **kwargs):
-        if self.photo:
+        if self.photo and self.photo != self._prev_photo:
             image_resize(self.photo, (1280, 720))
         super().save(*args, **kwargs)
         self.update_header_website()
