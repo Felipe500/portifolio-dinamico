@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'app.historic.apps.HistoricConfig',
     'app.skills.apps.SkillsConfig',
     'app.projects.apps.ProjectsConfig',
+    'app.contact_me.apps.ContactMeConfig',
 ]
 
 MIDDLEWARE = [

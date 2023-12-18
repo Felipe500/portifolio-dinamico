@@ -6,6 +6,7 @@ from django.db import models
 
 from app.common.fields import ImageField
 from app.common.models import BaseModel
+from app.common.utils import image_resize
 
 from ..models.website import Website
 
@@ -45,6 +46,8 @@ class About(BaseModel):
         return f"Sobre | website: {self.website.description}"
 
     def save(self, *args, **kwargs):
+        if self.photo:
+            image_resize(self.photo, (1280, 720))
         super().save(*args, **kwargs)
         self.update_about_website()
 
