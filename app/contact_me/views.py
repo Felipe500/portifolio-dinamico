@@ -18,8 +18,6 @@ class ContactMeView(View):
             form = form.save(commit=False)
             form.save()
             return JsonResponse({'message': 'success'})
-        print('not valid')
-        print(form.errors)
         return render(self.request, 'contact_me.html', {
             'form_contact_me': form,
         })
