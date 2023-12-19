@@ -34,7 +34,7 @@ LOGGING = {
     'handlers': {
         'file': {
             'level': 'DEBUG',
-            'class': 'logging.FileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',
             'formatter': 'default',
             'filename': '/root/logs/demos/portifolio-dev/debug.log',
             'backupCount': 10,
