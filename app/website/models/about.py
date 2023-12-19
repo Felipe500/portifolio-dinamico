@@ -14,7 +14,7 @@ from ..models.website import Website
 class About(BaseModel):
     title = models.CharField(max_length=255, verbose_name="Titulo - Sobre Mim", default="Sobre Mim")
     content = models.TextField(verbose_name="Minha historia", default="Minha história.")
-    photo = ImageField(verbose_name="Foto", upload_to="website/perfil/%Y/%m/%d/", blank=True, null=True)
+    photo = ImageField(verbose_name="Foto", upload_to="website/perfil/", blank=True, null=True)
     name = models.CharField(max_length=255, default="Luiz Santana")
     email = models.EmailField(max_length=255, default="email@email.com")
     phone = models.CharField(max_length=16, verbose_name="Telefone", default="879956080")

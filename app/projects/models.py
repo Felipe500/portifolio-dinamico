@@ -11,7 +11,7 @@ from app.common.utils import image_resize, make_thumbnail
 class Project(BaseModel):
     title = models.CharField(max_length=255, verbose_name="Nome do projeto", null=True, blank=True)
     description = models.CharField(max_length=255, verbose_name="Descrição", null=True, blank=True)
-    cover = ImageField(upload_to='projects/cover/%Y/%m/%d/', verbose_name='Capa', blank=True, null=True)
+    cover = ImageField(upload_to='projects/cover/', verbose_name='Capa', blank=True, null=True)
     thumbnail = ImageField(upload_to="projects/thumbnails/", verbose_name='Miniatura da Capa', blank=True, null=True)
     type = models.CharField(choices=TYPE_PROJECT, verbose_name="Tipo de Projeto", default=TYPE_PROJECT.full_stack)
     demo_link = models.CharField(

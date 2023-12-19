@@ -13,7 +13,7 @@ class Header(BaseModel):
     subtitle = models.TextField(max_length=255, verbose_name="Subtítulo", default="Descubra mais sobre mim...")
     photo = ImageField(
         verbose_name="Foto do cabeçalho",
-        upload_to="website/header/%Y/%m/%d/",
+        upload_to="website/header/",
         blank=True,
         null=True,
     )
