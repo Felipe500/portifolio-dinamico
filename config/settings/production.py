@@ -1,42 +1,26 @@
-from .base import *  # noqa
-
 import os
+from .base import *  # noqa
 
 DEBUG = False
 
-STATIC_ROOT = '/media/demo-portifolio-dev/staticfiles'
-MEDIA_ROOT = '/media/demo-portifolio-dev/media'
+# aws settings
+AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+AWS_DEFAULT_ACL = config("AWS_DEFAULT_ACL")
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+# s3 static settings
+STATIC_LOCATION = 'static'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+STATICFILES_STORAGE = 'config.storage_backends.StaticStorage'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/root/logs/demos/portifolio-dev/debug.log',
-        },
-        'file_info': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename':  '/root/logs/demos/portifolio-dev/debug_info.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-        },
-        'django.template': {
-            'handlers': ['file'],
-            'level': 'ERROR',
-        },
-        'members_enable': {
-            'handlers': ['file_info'],
-            'level': 'INFO',
-        },
-    },
-}
+# s3 public media settings
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+DEFAULT_FILE_STORAGE = 'config.storage_backends.PublicMediaStorage'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'))
+
+
