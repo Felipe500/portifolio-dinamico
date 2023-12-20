@@ -42,7 +42,7 @@
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ website.about.content }}</p>
                     </div>
                     <div class="sobre_info">
-                        <p><i class="fa-solid fa-calendar-days"></i>Data de nascimento: {{ website.about.birth_date }}</p>
+                        <p><i class="fa-solid fa-calendar-days"></i>Idade: {{ website.about.years_life }}</p>
                         <p><i class="fa-sharp fa-solid fa-laptop-code"></i>Freelance: {% if website.about.is_freelance %} Sim {% else %} Não disponível{% endif %}</p>
                         <p><i class="fa-solid fa-location-dot"></i>Endereço: {{ website.about.address }}</p>
                         <p><i class="fa-sharp fa-solid fa-globe"></i>Idiomas faladas: {{ website.about.languages|format_list_language }}</p>
