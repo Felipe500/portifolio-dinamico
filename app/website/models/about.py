@@ -66,6 +66,7 @@ class About(BaseModel):
             'years_life':  relativedelta(datetime.date.today(),  self.birth_date).years,
             'is_freelance': self.is_freelance or '',
             'nationality': self.nationality or '',
+            'address': self.address or '',
             'languages': self.languages or '',
             'photo': getattr(self.photo, 'url') if self.photo else ''
         }
